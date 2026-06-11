@@ -59,7 +59,7 @@ const Footer = () => {
                 </div>
 
                 {/* company links */}
-                <div className="col-span-2 md:col-span-2 lg:col-span-2 order-2 md:order-3 lg:order-2 flex flex-col items-center md:items-start text-center md:text-left">
+                <div className="col-span-1 md:col-span-2 lg:col-span-2 order-2 md:order-3 lg:order-2 flex flex-col items-center md:items-start text-center md:text-left">
                     <h4 className="font-bold text-lg mb-6 tracking-wide text-white">Company</h4>
                     <div className="flex flex-col gap-4">
                         <a href="#" className="text-[#a0a0a0] hover:text-white transition-colors text-sm font-medium">About Us</a>
@@ -70,7 +70,7 @@ const Footer = () => {
                 </div>
 
                 {/* service links */}
-                <div className="col-span-2 md:col-span-2 lg:col-span-2 order-3 md:order-4 lg:order-3 flex flex-col items-center md:items-start text-center md:text-left">
+                <div className="col-span-1 md:col-span-2 lg:col-span-2 order-3 md:order-4 lg:order-3 flex flex-col items-center md:items-start text-center md:text-left">
                     <h4 className="font-bold text-lg mb-6 tracking-wide text-white">Services</h4>
                     <div className="flex flex-col gap-4">
                         <a href="#" className="text-[#a0a0a0] hover:text-white transition-colors text-sm font-medium">Web Design</a>
@@ -81,7 +81,7 @@ const Footer = () => {
                 </div>
 
                 {/* support links */}
-                <div className="col-span-2 md:col-span-2 lg:col-span-2 order-4 md:order-5 lg:order-4 flex flex-col items-center md:items-start text-center md:text-left">
+                <div className="col-span-1 md:col-span-2 lg:col-span-2 order-4 md:order-5 lg:order-4 flex flex-col items-center md:items-start text-center md:text-left">
                     <h4 className="font-bold text-lg mb-6 tracking-wide text-white">Support</h4>
                     <div className="flex flex-col gap-4">
                         <a href="#" className="text-[#a0a0a0] hover:text-white transition-colors text-sm font-medium">Help Center</a>
