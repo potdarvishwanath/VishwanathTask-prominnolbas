@@ -45,7 +45,7 @@ const StrategySection = () => {
                     variants={fadeUpVariants}
                     className="order-1 max-w-6xl mx-auto w-full mb-6 lg:mb-6"
                 >
-                    <h2 className="w-full text-left sm:text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#4b2885] via-[#8a5cff] to-violet-600 leading-[1.15] tracking-tight">
+                    <h2 className="w-full text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#4b2885] via-[#8a5cff] to-violet-600 leading-[1.15] tracking-tight">
                         Our business strategy has helped many businesses across the globe
                     </h2>
                 </motion.div>

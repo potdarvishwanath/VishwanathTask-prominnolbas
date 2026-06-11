@@ -68,7 +68,7 @@ const FAQSection = () => {
                         className="order-1 lg:order-none lg:col-span-3 lg:col-start-3 lg:row-start-1"
                     >
                         {/* Applied theme gradient and exact typography scale */}
-                        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[3.25rem] xl:text-[4rem] font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#4b2885] via-[#8a5cff] to-violet-600 leading-[1.05] tracking-tight -mt-1 lg:-mt-2 pb-2">
+                        <h2 className="text-center lg:text-left text-4xl sm:text-5xl md:text-6xl lg:text-[3.25rem] xl:text-[4rem] font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#4b2885] via-[#8a5cff] to-violet-600 leading-[1.05] tracking-tight -mt-1 lg:-mt-2 pb-2">
                             Frequently asked questions
                         </h2>
                     </motion.div>

@@ -41,18 +41,18 @@ const TrustSection = () => {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
                     variants={containerVariants}
-                    className="max-w-5xl mx-auto flex flex-col mb-14 sm:mb-16 lg:mb-24 items-start sm:items-center"
+                    className="max-w-5xl mx-auto flex flex-col mb-14 sm:mb-16 lg:mb-24 items-center"
                 >
                     <motion.h2
                         variants={fadeUpVariants}
-                        className="w-full text-left sm:text-center text-4xl sm:text-5xl md:text-6xl lg:text-[3.25rem] xl:text-[4rem] font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-violet-300 via-[#8a5cff] to-violet-700 leading-[1.05] tracking-tight mb-5 sm:mb-8 lg:whitespace-nowrap"
+                        className="w-full text-center text-4xl sm:text-5xl md:text-6xl lg:text-[3.25rem] xl:text-[4rem] font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-violet-300 via-[#8a5cff] to-violet-700 leading-[1.05] tracking-tight mb-5 sm:mb-8 lg:whitespace-nowrap"
                     >
                         Why our clients <br className="block sm:block lg:hidden" /> trust us
                     </motion.h2>
 
                     <motion.p
                         variants={fadeUpVariants}
-                        className="w-full text-left sm:text-center text-base sm:text-lg md:text-xl text-black/80 font-normal leading-relaxed max-w-3xl"
+                        className="w-full text-center text-base sm:text-lg md:text-xl text-black/80 font-normal leading-relaxed max-w-3xl"
                     >
                         We deliver reliable, scalable, and high-quality software solutions tailored to each client's unique business goals. Our commitment to transparency, innovation, and timely delivery has helped businesses build stronger digital foundations.                    </motion.p>
                 </motion.div>

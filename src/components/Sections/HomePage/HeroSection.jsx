@@ -62,7 +62,7 @@ const HomeHero = () => {
 
         {/* Left Column: Typography & CTA */}
         <motion.div
-          className="w-full lg:w-[55%] flex flex-col items-start text-left"
+          className="w-full lg:w-[55%] flex flex-col items-center text-center lg:items-start lg:text-left"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -70,7 +70,7 @@ const HomeHero = () => {
           {/* 1. Title (Left Aligned) — mobile reduced to text-4xl */}
           <motion.h1
             variants={itemVariants}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-bold uppercase text-white leading-[1.05] tracking-tight mb-2 sm:mb-4 lg:mb-7"
+            className="w-full text-center lg:text-left text-4xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-bold uppercase text-white leading-[1.05] tracking-tight mb-2 sm:mb-4 lg:mb-7"
           >
             Great design <br />
             is <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-fuchsia-200 to-indigo-300">
@@ -94,7 +94,7 @@ const HomeHero = () => {
           {/* 3. Text Paragraph (Left Aligned) */}
           <motion.p
             variants={itemVariants}
-            className="text-base sm:text-lg text-white/70 mb-8 sm:mb-10 w-full max-w-none lg:max-w-lg font-normal leading-relaxed tracking-wide"
+            className="w-full text-center lg:text-left text-base sm:text-lg text-white/70 mb-8 sm:mb-10 max-w-none lg:max-w-lg font-normal leading-relaxed tracking-wide"
           >
             We help businesses launch, scale, and optimize digital products through expert web development, mobile applications, UI/UX design, and cloud solutions.          </motion.p>
 
