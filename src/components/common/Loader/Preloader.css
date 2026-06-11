@@ -1,0 +1,135 @@
+/* =============================================
+   PRELOADER — Left-to-Right Zipper Split
+   with Visual Block Loader
+   ============================================= */
+
+.preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: all;
+    background: transparent;
+}
+
+/* Container holding the vertical strips */
+.preloader__columns {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: row;
+    z-index: 1;
+}
+
+/* Each vertical strip */
+.preloader__column {
+    flex: 1;
+    position: relative;
+}
+
+/* The dark panels inside each column */
+.preloader__half {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 50vh;
+    background: #e9d5ff; /* light violet */
+    transition: transform 1s cubic-bezier(0.76, 0, 0.24, 1);
+    will-change: transform;
+}
+
+.preloader__half--top {
+    top: 0;
+}
+
+.preloader__half--bottom {
+    bottom: 0;
+}
+
+/* ---- Reveal Animation ---- */
+.preloader--revealing .preloader__half--top {
+    transform: translateY(-100%);
+}
+
+.preloader--revealing .preloader__half--bottom {
+    transform: translateY(100%);
+}
+
+/* ---- Visual Loader Styling ---- */
+.preloader__loader-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    gap: 0.5em;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.preloader--revealing .preloader__loader-container {
+    opacity: 0;
+    transition-duration: 0.2s;
+}
+
+/* Top Row (Label + Percentage) */
+.preloader__loader-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.preloader__loader-label {
+    font-family: var(--font-geist-sans, "Arial", sans-serif);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.6);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.preloader__loader-percentage-container {
+    display: flex;
+    align-items: baseline;
+    font-family: var(--font-geist-mono, "Courier New", monospace);
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.preloader__loader-count {
+    font-variant-numeric: tabular-nums;
+}
+
+.preloader__loader-percent {
+    font-size: 0.6em;
+    margin-left: 0.05em;
+}
+
+/* Progress Bar */
+.preloader__loader-bar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 1.25em;
+    gap: 0.15em;
+}
+
+.preloader__loader-block {
+    flex: 1;
+    height: 100%;
+    border-radius: 3px;
+    transition: background-color 20ms linear;
+}
+
+/* Filled with dark violet */
+.preloader__loader-block--filled {
+    background-color: #8a5cff;
+}
+
+/* Unfilled with faint violet */
+.preloader__loader-block--unfilled {
+    background-color: rgba(138, 92, 255, 0.2);
+}
