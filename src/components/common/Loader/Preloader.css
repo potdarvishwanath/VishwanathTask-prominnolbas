@@ -35,7 +35,7 @@
     left: 0;
     right: 0;
     height: 50vh;
-    background: #e9d5ff; /* light violet */
+    background: #f6f0ec; /* specified light beige/gray */
     transition: transform 1s cubic-bezier(0.76, 0, 0.24, 1);
     will-change: transform;
 }

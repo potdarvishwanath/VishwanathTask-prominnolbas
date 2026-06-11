@@ -79,9 +79,8 @@ const StrategySection = () => {
                     variants={fadeUpVariants}
                     className="order-3 lg:order-2 max-w-6xl mx-auto w-full mb-8 lg:mb-12"
                 >
-                    <p className="w-full text-left sm:text-center text-sm sm:text-base md:text-lg text-black/70 font-light leading-relaxed max-w-4xl mx-auto">
-                        Lorem ipsum dolor sit amet consectetur. Elementum nisl duis tortor sed. Suspendisse lobortis vitae quis vehicula pellentesque sit id.
-                    </p>
+                    <p className="w-full text-left sm:text-center text-sm sm:text-base md:text-lg text-black/70 font-normal leading-relaxed max-w-4xl mx-auto">
+                        We empower businesses across industries with innovative software solutions, helping them streamline operations, enhance customer experiences, and accelerate growth.                    </p>
                 </motion.div>
 
                 {/* ─── GLASSMORPHIC STATS ROW ────────────────────────────────────── */}

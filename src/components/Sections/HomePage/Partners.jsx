@@ -61,12 +61,12 @@ const OurPartnersSection = () => {
                     className="max-w-6xl mx-auto flex flex-col items-center text-center mb-10 lg:mb-16"
                 >
                     {/* Headline */}
-                    <h2 className="w-full text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#4b2885] via-[#8a5cff] to-violet-600 leading-[1.15] tracking-tight mb-4 sm:mb-6">
+                    <h2 className="w-full text-4xl sm:text-5xl md:text-6xl lg:text-[3.25rem] xl:text-[4rem] font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#4b2885] via-[#8a5cff] to-violet-600 leading-[1.15] tracking-tight mb-4 sm:mb-6">
                         Information Partners
                     </h2>
 
                     {/* Subtitle text */}
-                    <p className="w-full text-sm sm:text-base md:text-lg text-black/70 font-light leading-relaxed max-w-4xl">
+                    <p className="w-full text-sm sm:text-base md:text-lg text-black/70 font-normal leading-relaxed max-w-4xl">
                         We collaborate with industry leaders to bring you the best technology solutions.
                     </p>
                 </motion.div>

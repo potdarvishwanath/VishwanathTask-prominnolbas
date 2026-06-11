@@ -74,8 +74,8 @@ const HomeHero = () => {
             variants={itemVariants}
             className="text-4xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-bold uppercase text-white leading-[1.05] tracking-tight mb-2 sm:mb-4 lg:mb-7"
           >
-            Great design is <br className="hidden sm:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-fuchsia-200 to-indigo-300">
+            Great design <br />
+            is <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-fuchsia-200 to-indigo-300">
               invisible
             </span>
           </motion.h1>
@@ -96,10 +96,9 @@ const HomeHero = () => {
           {/* 3. Text Paragraph (Left Aligned) */}
           <motion.p
             variants={itemVariants}
-            className="text-base sm:text-lg text-white/70 mb-8 sm:mb-10 w-full max-w-none lg:max-w-lg font-light leading-relaxed tracking-wide"
+            className="text-base sm:text-lg text-white/70 mb-8 sm:mb-10 w-full max-w-none lg:max-w-lg font-normal leading-relaxed tracking-wide"
           >
-            Lorem ipsum dolor sit amet constreteur. Our integrated approach to interior and exterior design allows us to provide a comprehensive solution.
-          </motion.p>
+            We help businesses launch, scale, and optimize digital products through expert web development, mobile applications, UI/UX design, and cloud solutions.          </motion.p>
 
           {/* 4. Button (Solid White background, black text, smooth hover effects) */}
           <motion.button

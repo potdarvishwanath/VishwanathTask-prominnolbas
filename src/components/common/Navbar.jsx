@@ -55,20 +55,11 @@ const Navbar = () => {
 
                     {/* Logo */}
                     <div className="flex-shrink-0 flex items-center cursor-pointer">
-                        <div className={`flex items-center justify-center w-12 h-12 rounded-full transition-colors duration-500 ${isScrolled ? "bg-white text-black" : "bg-black text-white"}`}>
-                            <svg
-                                className="h-6 w-6"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2.5"
-                            >
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v8m-4-4h8" />
-                            </svg>
+                        <div className="flex items-center justify-center w-12 h-12 rounded-full bg-black text-white">
+                            <span className="text-xl font-bold">V</span>
                         </div>
                         <span className="ml-3 font-bold text-xl tracking-tight uppercase hidden sm:block">
-                            Logo
+                            Task
                         </span>
                     </div>
 

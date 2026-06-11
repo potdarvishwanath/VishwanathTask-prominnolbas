@@ -2,11 +2,11 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="relative w-full bg-[#111] text-white pt-32 sm:pt-40 pb-8 px-5 sm:px-8 lg:px-12 mt-32">
+        <footer className="relative w-full bg-[#111] text-white pt-32 sm:pt-40 pb-8 mt-32">
 
             {/* ─── OVERLAPPING CTA BANNER ───────────────────────────────────── */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[1200px] px-5 sm:px-8 lg:px-12">
-                <div className="w-full bg-gray-100 rounded-xl sm:rounded-2xl shadow-[0_15px_40px_rgba(0,0,0,0.15)] p-6 sm:p-8 lg:p-10 flex flex-col md:flex-row items-center justify-between gap-6 border border-gray-200">
+                <div className="w-full bg-gray-300 rounded-xl sm:rounded-2xl shadow-[0_15px_40px_rgba(0,0,0,0.15)] p-6 sm:p-8 lg:p-10 flex flex-col md:flex-row items-center justify-between gap-6 border border-gray-200">
                     <div className="text-center md:text-left flex-1">
                         <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-2 text-black">Need more information?</h3>
                         <p className="text-gray-600 font-medium text-sm max-w-lg mx-auto md:mx-0">
@@ -14,31 +14,31 @@ const Footer = () => {
                         </p>
                     </div>
                     <button className="flex-shrink-0 px-8 py-4 bg-[#8853ff] text-white rounded-full font-bold uppercase tracking-widest text-sm hover:bg-[#713fdb] transition-colors active:scale-95 shadow-lg">
-                        Button
+                        Contact Now
                     </button>
                 </div>
             </div>
 
             {/* ─── MAIN FOOTER CONTENT ──────────────────────────────────────── */}
-            <div className="w-full max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-8 gap-y-12">
+            <div className="w-full max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12 grid grid-cols-2 md:grid-cols-6 lg:grid-cols-12 gap-x-6 gap-y-10 lg:gap-y-12">
 
                 {/* Column 1: Logo & Text */}
-                <div className="col-span-2 flex flex-col items-center text-center lg:items-start lg:text-left order-1 lg:order-1">
-                    <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center text-black mb-6">
-                        <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v8m-4-4h8" />
-                        </svg>
+                <div className="col-span-2 md:col-span-3 lg:col-span-3 order-1 lg:order-1 flex flex-col items-center text-center md:items-start md:text-left">
+                    <div className="flex items-center gap-3 mb-6">
+                        <div className="w-14 h-14 bg-black rounded-full flex items-center justify-center text-white border border-white/10 shadow-lg">
+                            <span className="text-2xl font-bold">V</span>
+                        </div>
+                        <span className="font-bold text-2xl text-white tracking-tight uppercase">Task</span>
                     </div>
-                    <p className="text-[#a0a0a0] text-sm leading-loose max-w-sm font-light lg:pr-4">
+                    <p className="text-[#a0a0a0] text-sm leading-loose max-w-sm font-normal md:pr-4">
                         Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sintelit officia consequat
                     </p>
                 </div>
 
-                {/* Column 5: Social (Moved up for mobile) */}
-                <div className="col-span-2 md:col-span-4 lg:col-span-1 flex flex-col items-center lg:items-start order-2 lg:order-5">
+                {/* Column 5: Social */}
+                <div className="col-span-2 md:col-span-3 lg:col-span-3 order-2 lg:order-5 flex flex-col items-center md:items-end lg:items-start">
                     <h4 className="font-bold text-lg mb-6 tracking-wide text-white">Connect with us</h4>
-                    <div className="flex gap-4 justify-center lg:justify-start">
+                    <div className="flex gap-3 justify-center md:justify-end lg:justify-start flex-wrap">
                         {/* Facebook */}
                         <a href="#" className="w-10 h-10 rounded-full bg-[#333] hover:bg-[#8853ff] hover:scale-110 flex items-center justify-center transition-all duration-300 shadow-sm text-white">
                             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" /></svg>
@@ -59,7 +59,7 @@ const Footer = () => {
                 </div>
 
                 {/* Column 2: Links */}
-                <div className="flex flex-col items-center lg:items-start text-center lg:text-left col-span-1 order-3 lg:order-2">
+                <div className="col-span-1 md:col-span-2 lg:col-span-2 order-3 lg:order-2 flex flex-col items-center md:items-start text-center md:text-left">
                     <h4 className="font-bold text-lg mb-6 tracking-wide text-white">Company</h4>
                     <div className="flex flex-col gap-4">
                         <a href="#" className="text-[#a0a0a0] hover:text-white transition-colors text-sm font-medium">About Us</a>
@@ -70,7 +70,7 @@ const Footer = () => {
                 </div>
 
                 {/* Column 3: Links */}
-                <div className="flex flex-col items-center lg:items-start text-center lg:text-left col-span-1 order-4 lg:order-3">
+                <div className="col-span-1 md:col-span-2 lg:col-span-2 order-4 lg:order-3 flex flex-col items-center md:items-start text-center md:text-left">
                     <h4 className="font-bold text-lg mb-6 tracking-wide text-white">Services</h4>
                     <div className="flex flex-col gap-4">
                         <a href="#" className="text-[#a0a0a0] hover:text-white transition-colors text-sm font-medium">Web Design</a>
@@ -81,7 +81,7 @@ const Footer = () => {
                 </div>
 
                 {/* Column 4: Links */}
-                <div className="flex flex-col items-center lg:items-start text-center lg:text-left col-span-1 order-5 lg:order-4">
+                <div className="col-span-2 md:col-span-2 lg:col-span-2 order-5 lg:order-4 flex flex-col items-center md:items-start text-center md:text-left">
                     <h4 className="font-bold text-lg mb-6 tracking-wide text-white">Support</h4>
                     <div className="flex flex-col gap-4">
                         <a href="#" className="text-[#a0a0a0] hover:text-white transition-colors text-sm font-medium">Help Center</a>
@@ -94,9 +94,9 @@ const Footer = () => {
             </div>
 
             {/* ─── COPYRIGHT & LEGAL ──────────────────────────────────────── */}
-            <div className="w-full max-w-[1400px] mx-auto mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+            <div className="w-full max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12 mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
                 <p className="text-[#a0a0a0] text-sm">
-                    © {new Date().getFullYear()} Logo. All rights reserved.
+                    © {new Date().getFullYear()} Task. All rights reserved.
                 </p>
                 <div className="flex gap-6 text-[#a0a0a0]">
                     <a href="#" className="hover:text-white transition-colors text-sm">Privacy Policy</a>

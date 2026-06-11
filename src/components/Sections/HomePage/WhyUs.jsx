@@ -26,10 +26,10 @@ const TrustSection = () => {
     };
 
     const listItems = [
-        "Lorem ipsum dolor sit amet consectetur. Elementum nisl duis tortor sed.",
-        "Lorem ipsum dolor sit amet consectetur. Elementum nisl duis tortor sed.",
-        "Lorem ipsum dolor sit amet consectetur. Elementum nisl duis tortor sed.",
-        "Lorem ipsum dolor sit amet consectetur. Elementum nisl duis tortor sed.",
+        "Experienced team delivering high-quality web, mobile, and cloud solutions.",
+        "Transparent communication and agile development throughout every project.",
+        "Scalable and secure software built using modern technologies and best practices.",
+        "Dedicated support and long-term partnerships focused on your business growth.",
     ];
 
     return (
@@ -55,10 +55,9 @@ const TrustSection = () => {
 
                     <motion.p
                         variants={fadeUpVariants}
-                        className="w-full text-left sm:text-center text-base sm:text-lg md:text-xl text-black/80 font-light leading-relaxed max-w-3xl"
+                        className="w-full text-left sm:text-center text-base sm:text-lg md:text-xl text-black/80 font-normal leading-relaxed max-w-3xl"
                     >
-                        Lorem ipsum dolor sit amet consectetur. Elementum nisl duis tortor sed. Suspendisse lobortis vitae quis vehicula pellentesque sit id. Urna posuere consequat velit vulputate faucibus pretium arcu accumsan sit.
-                    </motion.p>
+                        We deliver reliable, scalable, and high-quality software solutions tailored to each client's unique business goals. Our commitment to transparency, innovation, and timely delivery has helped businesses build stronger digital foundations.                    </motion.p>
                 </motion.div>
 
                 {/* ─── MAIN CONTENT GRID ─────────────────────────────────────────── */}

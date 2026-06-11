@@ -1,10 +1,20 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const TestimonialSection = () => {
     const scrollRef = useRef(null);
+
+    // Loading State for Skeletons
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 2500);
+        return () => clearTimeout(timer);
+    }, []);
 
     // Animation Variants
     const containerVariants = {
@@ -85,7 +95,7 @@ const TestimonialSection = () => {
                     <motion.h2
                         variants={fadeUpVariants}
                         // Applied our established Standard Section Title typography scale & leading
-                        className="w-full text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#4b2885] via-[#8a5cff] to-violet-600 leading-[1.05] tracking-tight"
+                        className="w-full text-4xl sm:text-5xl md:text-6xl lg:text-[3.25rem] xl:text-[4rem] font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#4b2885] via-[#8a5cff] to-violet-600 leading-[1.05] tracking-tight"
                     >
                         Our happy clients
                     </motion.h2>
@@ -115,38 +125,59 @@ const TestimonialSection = () => {
                         ref={scrollRef}
                         className="flex flex-nowrap gap-5 sm:gap-6 lg:gap-8 overflow-x-auto snap-x snap-mandatory pb-10 pt-2 px-8 sm:px-10 md:px-14 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
                     >
-                        {testimonials.map((t) => (
-                            <motion.div
-                                key={t.id}
-                                variants={fadeUpVariants}
-                                className="relative flex flex-col justify-between flex-none w-[85vw] sm:w-[60vw] md:w-[calc(50%-12px)] lg:w-[calc(33.333%-21px)] snap-center bg-[#f8f5ff] border border-violet-100 shadow-[0_8px_30px_rgba(138,92,255,0.04)] p-8 sm:p-10 transition-all duration-300 hover:shadow-[0_15px_40px_rgba(138,92,255,0.1)] hover:-translate-y-1 hover:border-[#8a5cff]/30 group"
-                            >
-                                {/* Large decorative quote mark in the background */}
-                                <svg
-                                    className="absolute top-6 right-6 w-16 h-16 text-[#8a5cff]/[0.06] group-hover:text-[#8a5cff]/10 transition-colors duration-300 pointer-events-none"
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24"
+                        {isLoading ? (
+                            Array.from({ length: 4 }).map((_, i) => (
+                                <motion.div
+                                    key={`skeleton-${i}`}
+                                    variants={fadeUpVariants}
+                                    className="relative flex flex-col justify-between flex-none w-[85vw] sm:w-[60vw] md:w-[calc(50%-12px)] lg:w-[calc(33.333%-21px)] snap-center bg-[#f8f5ff] border border-violet-100 p-8 sm:p-10 animate-pulse"
                                 >
-                                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                                </svg>
-
-                                <p className="relative z-10 text-black/75 font-medium leading-relaxed mb-10 text-base sm:text-lg">
-                                    "{t.text}"
-                                </p>
-
-                                <div className="relative z-10 flex items-center gap-4 mt-auto">
-                                    <div className="relative">
-                                        <img src={t.avatar} alt={t.name} className="w-14 h-14 object-cover border border-violet-200" />
-                                        {/* Little accent dot */}
-                                        <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-[#8a5cff] border-2 border-[#f8f5ff] rounded-full"></div>
+                                    <div className="h-4 bg-violet-200/50 rounded w-full mb-4"></div>
+                                    <div className="h-4 bg-violet-200/50 rounded w-full mb-4"></div>
+                                    <div className="h-4 bg-violet-200/50 rounded w-3/4 mb-10"></div>
+                                    <div className="relative z-10 flex items-center gap-4 mt-auto">
+                                        <div className="w-14 h-14 bg-violet-200/50 rounded-none"></div>
+                                        <div className="flex-1">
+                                            <div className="h-3 bg-violet-200/50 rounded w-1/2 mb-3"></div>
+                                            <div className="h-2 bg-violet-200/50 rounded w-1/3"></div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h4 className="font-bold text-black/90 text-sm uppercase tracking-wider">{t.name}</h4>
-                                        <p className="text-[#8a5cff] text-xs uppercase tracking-widest font-semibold mt-0.5">{t.role}</p>
+                                </motion.div>
+                            ))
+                        ) : (
+                            testimonials.map((t) => (
+                                <motion.div
+                                    key={t.id}
+                                    variants={fadeUpVariants}
+                                    className="relative flex flex-col justify-between flex-none w-[85vw] sm:w-[60vw] md:w-[calc(50%-12px)] lg:w-[calc(33.333%-21px)] snap-center bg-[#f8f5ff] border border-violet-100 shadow-[0_8px_30px_rgba(138,92,255,0.04)] p-8 sm:p-10 transition-all duration-300 hover:shadow-[0_15px_40px_rgba(138,92,255,0.1)] hover:-translate-y-1 hover:border-[#8a5cff]/30 group"
+                                >
+                                    {/* Large decorative quote mark in the background */}
+                                    <svg
+                                        className="absolute top-6 right-6 w-16 h-16 text-[#8a5cff]/[0.06] group-hover:text-[#8a5cff]/10 transition-colors duration-300 pointer-events-none"
+                                        fill="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                                    </svg>
+
+                                    <p className="relative z-10 text-black/75 font-medium leading-relaxed mb-10 text-base sm:text-lg">
+                                        "{t.text}"
+                                    </p>
+
+                                    <div className="relative z-10 flex items-center gap-4 mt-auto">
+                                        <div className="relative">
+                                            <img src={t.avatar} alt={t.name} className="w-14 h-14 object-cover border border-violet-200" />
+                                            {/* Little accent dot */}
+                                            <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-[#8a5cff] border-2 border-[#f8f5ff] rounded-full"></div>
+                                        </div>
+                                        <div>
+                                            <h4 className="font-bold text-black/90 text-sm uppercase tracking-wider">{t.name}</h4>
+                                            <p className="text-[#8a5cff] text-xs uppercase tracking-widest font-semibold mt-0.5">{t.role}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            </motion.div>
-                        ))}
+                                </motion.div>
+                            ))
+                        )}
                     </div>
 
                     {/* Right Scroll Button */}

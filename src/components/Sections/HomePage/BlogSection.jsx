@@ -1,11 +1,21 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const LatestBlogSection = () => {
     // Reference for the mobile scroll container
     const scrollContainerRef = useRef(null);
+
+    // Loading State for Skeletons
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 2500);
+        return () => clearTimeout(timer);
+    }, []);
 
     // Function to handle smooth scrolling left and right
     const scroll = (direction) => {
@@ -87,8 +97,7 @@ const LatestBlogSection = () => {
                 >
                     <motion.h2
                         variants={fadeUpVariants}
-                        // Applied our established Standard Section Title typography scale & leading
-                        className="w-full text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#4b2885] via-[#8a5cff] to-violet-600 leading-[1.05] tracking-tight"
+                        className="w-full text-4xl sm:text-5xl md:text-6xl lg:text-[3.25rem] xl:text-[4rem] font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#4b2885] via-[#8a5cff] to-violet-600 leading-[1.05] tracking-tight"
                     >
                         Latest blog
                     </motion.h2>
@@ -117,59 +126,82 @@ const LatestBlogSection = () => {
                         // Mobile: flex row, hidden scrollbar, snapping. Tab/Desktop: grid.
                         className="flex md:grid overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-10 lg:mb-12 px-5 md:px-0 pb-6 md:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
                     >
-                        {blogs.map((blog) => (
-                            <motion.div
-                                key={blog.id}
-                                variants={fadeUpVariants}
-                                className="group flex flex-col bg-white rounded-none overflow-hidden border border-black/[0.05] shadow-sm transition-all duration-300 hover:shadow-[0_20px_40px_rgba(138,92,255,0.08)] hover:-translate-y-2 cursor-pointer w-[85vw] sm:w-[60vw] md:w-auto shrink-0 snap-center md:snap-align-none"
-                            >
-                                {/* Image Header */}
-                                <div className="relative w-full aspect-[4/3] overflow-hidden bg-black/5">
-                                    <img
-                                        src={blog.image}
-                                        alt={blog.title}
-                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-br from-black/10 via-transparent to-transparent pointer-events-none" />
+                        {isLoading ? (
+                            Array.from({ length: 3 }).map((_, i) => (
+                                <motion.div
+                                    key={`skeleton-${i}`}
+                                    variants={fadeUpVariants}
+                                    className="group flex flex-col bg-white rounded-none overflow-hidden border border-black/[0.05] shadow-sm w-[85vw] sm:w-[60vw] md:w-auto shrink-0 snap-center md:snap-align-none animate-pulse"
+                                >
+                                    <div className="relative w-full aspect-[4/3] bg-gray-200"></div>
+                                    <div className="flex flex-col flex-grow p-6 sm:p-8">
+                                        <div className="h-3 bg-gray-200 rounded w-1/4 mb-4"></div>
+                                        <div className="h-6 bg-gray-200 rounded w-3/4 mb-2"></div>
+                                        <div className="h-6 bg-gray-200 rounded w-1/2 mb-6"></div>
+                                        <div className="h-4 bg-gray-200 rounded w-full mb-2"></div>
+                                        <div className="h-4 bg-gray-200 rounded w-full mb-2"></div>
+                                        <div className="h-4 bg-gray-200 rounded w-2/3 mb-6 flex-grow"></div>
+                                        <div className="mt-auto flex items-center">
+                                            <div className="h-4 bg-gray-200 rounded w-1/3"></div>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            ))
+                        ) : (
+                            blogs.map((blog) => (
+                                <motion.div
+                                    key={blog.id}
+                                    variants={fadeUpVariants}
+                                    className="group flex flex-col bg-white rounded-none overflow-hidden border border-black/[0.05] shadow-sm transition-all duration-300 hover:shadow-[0_20px_40px_rgba(138,92,255,0.08)] hover:-translate-y-2 cursor-pointer w-[85vw] sm:w-[60vw] md:w-auto shrink-0 snap-center md:snap-align-none"
+                                >
+                                    {/* Image Header */}
+                                    <div className="relative w-full aspect-[4/3] overflow-hidden bg-black/5">
+                                        <img
+                                            src={blog.image}
+                                            alt={blog.title}
+                                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-br from-black/10 via-transparent to-transparent pointer-events-none" />
 
-                                    {/* Category Badge */}
-                                    <div className="absolute top-4 left-4 sm:top-5 sm:left-5 px-3 py-1.5 bg-white/90 backdrop-blur-md rounded-none">
-                                        <span className="text-xs font-bold uppercase tracking-wider text-[#8a5cff]">
-                                            {blog.category}
+                                        {/* Category Badge */}
+                                        <div className="absolute top-4 left-4 sm:top-5 sm:left-5 px-3 py-1.5 bg-white/90 backdrop-blur-md rounded-none">
+                                            <span className="text-xs font-bold uppercase tracking-wider text-[#8a5cff]">
+                                                {blog.category}
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    {/* Card Content Area */}
+                                    <div className="flex flex-col flex-grow p-6 sm:p-8">
+                                        {/* Date */}
+                                        <span className="text-xs font-semibold text-black/40 uppercase tracking-widest mb-3">
+                                            {blog.date}
                                         </span>
+
+                                        <h3 className="text-xl sm:text-2xl font-bold text-black/90 mb-4 leading-snug group-hover:text-[#8a5cff] transition-colors duration-300">
+                                            {blog.title}
+                                        </h3>
+
+                                        <p className="text-black/60 font-normal text-sm sm:text-base leading-relaxed mb-6 flex-grow">
+                                            {blog.excerpt}
+                                        </p>
+
+                                        {/* Learn More Link */}
+                                        <div className="flex items-center text-[#8a5cff] font-semibold text-sm tracking-wide uppercase mt-auto">
+                                            {blog.linkText}
+                                            <svg
+                                                className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1.5"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke="currentColor"
+                                            >
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                            </svg>
+                                        </div>
                                     </div>
-                                </div>
-
-                                {/* Card Content Area */}
-                                <div className="flex flex-col flex-grow p-6 sm:p-8">
-                                    {/* Date */}
-                                    <span className="text-xs font-semibold text-black/40 uppercase tracking-widest mb-3">
-                                        {blog.date}
-                                    </span>
-
-                                    <h3 className="text-xl sm:text-2xl font-bold text-black/90 mb-4 leading-snug group-hover:text-[#8a5cff] transition-colors duration-300">
-                                        {blog.title}
-                                    </h3>
-
-                                    <p className="text-black/60 font-light text-sm sm:text-base leading-relaxed mb-6 flex-grow">
-                                        {blog.excerpt}
-                                    </p>
-
-                                    {/* Learn More Link */}
-                                    <div className="flex items-center text-[#8a5cff] font-semibold text-sm tracking-wide uppercase mt-auto">
-                                        {blog.linkText}
-                                        <svg
-                                            className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1.5"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                        >
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                        </svg>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        ))}
+                                </motion.div>
+                            ))
+                        )}
                     </motion.div>
 
                     {/* Right Scroll Button (Mobile Only) */}

@@ -136,7 +136,7 @@ const FAQSection = () => {
                                                 transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                                                 className="overflow-hidden"
                                             >
-                                                <div className="px-6 sm:px-8 pb-6 sm:pb-8 text-black/60 font-light text-sm sm:text-base leading-relaxed">
+                                                <div className="px-6 sm:px-8 pb-6 sm:pb-8 text-black/60 font-normal text-sm sm:text-base leading-relaxed">
                                                     {faq.answer}
                                                 </div>
                                             </motion.div>
