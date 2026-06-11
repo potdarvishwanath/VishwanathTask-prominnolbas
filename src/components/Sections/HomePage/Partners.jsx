@@ -42,6 +42,18 @@ const OurPartnersSection = () => {
 
     return (
         <section className="relative w-full bg-white py-12 md:py-16 lg:py-20 overflow-hidden selection:bg-[#8a5cff] selection:text-white">
+            <style>
+                {`
+                @keyframes marquee {
+                    0% { transform: translate3d(0%, 0, 0); }
+                    100% { transform: translate3d(-50%, 0, 0); }
+                }
+                .animate-marquee {
+                    animation: marquee 20s linear infinite;
+                    will-change: transform;
+                }
+                `}
+            </style>
 
             {/* ─── FAINT BACKGROUND ORBS ─────────────────────────────────────── */}
             <div className="absolute top-0 left-[15%] w-[40%] h-[40%] bg-violet-300/10 rounded-full blur-[140px] pointer-events-none" />
@@ -72,11 +84,9 @@ const OurPartnersSection = () => {
                 <div className="w-full max-w-7xl mx-auto py-6 sm:py-8 mb-10 lg:mb-12 relative">
 
                     {/* The logo scrolling animation container */}
-                    <div className="overflow-hidden w-full relative flex items-center">
-                        <motion.div
-                            animate={{ x: ["0%", "-50%"] }}
-                            transition={{ repeat: Infinity, ease: "linear", duration: 20 }}
-                            className="flex whitespace-nowrap gap-x-16 sm:gap-x-20 md:gap-x-28 items-center w-max px-8"
+                    <div className="overflow-hidden w-full relative flex items-center" style={{ transform: "translateZ(0)" }}>
+                        <div
+                            className="animate-marquee flex whitespace-nowrap gap-x-16 sm:gap-x-20 md:gap-x-28 items-center w-max px-8"
                         >
                             {duplicatedLogos.map((partner, index) => (
                                 <div
@@ -90,7 +100,7 @@ const OurPartnersSection = () => {
                                     />
                                 </div>
                             ))}
-                        </motion.div>
+                        </div>
                     </div>
 
                     {/* ─── BLURY FADE EFFECT AT ENDS ────────────────────────────── */}

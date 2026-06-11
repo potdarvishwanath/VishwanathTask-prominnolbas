@@ -180,7 +180,7 @@ export default function ColorBends({
         });
         rendererRef.current = renderer;
         renderer.outputColorSpace = THREE.SRGBColorSpace;
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+        renderer.setPixelRatio(1); // Force 1x resolution to prevent mobile OOM crashes
         renderer.setClearColor(0x000000, transparent ? 0 : 1);
         renderer.domElement.style.width = '100%';
         renderer.domElement.style.height = '100%';
