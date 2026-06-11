@@ -4,10 +4,8 @@ import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const LatestBlogSection = () => {
-    // Reference for the mobile scroll container
     const scrollContainerRef = useRef(null);
 
-    // Loading State for Skeletons
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
@@ -17,10 +15,8 @@ const LatestBlogSection = () => {
         return () => clearTimeout(timer);
     }, []);
 
-    // Function to handle smooth scrolling left and right
     const scroll = (direction) => {
         if (scrollContainerRef.current) {
-            // Scrolls roughly the width of one card + gap
             const scrollAmount = window.innerWidth * 0.85;
             scrollContainerRef.current.scrollBy({
                 left: direction === "left" ? -scrollAmount : scrollAmount,
@@ -29,7 +25,6 @@ const LatestBlogSection = () => {
         }
     };
 
-    // Animation Variants
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -47,7 +42,6 @@ const LatestBlogSection = () => {
         },
     };
 
-    // Upgraded Blog Data
     const blogs = [
         {
             id: 1,
@@ -123,7 +117,6 @@ const LatestBlogSection = () => {
                         whileInView="visible"
                         viewport={{ once: true, margin: "-100px" }}
                         variants={containerVariants}
-                        // Mobile: flex row, hidden scrollbar, snapping. Tab/Desktop: grid.
                         className="flex md:grid overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-10 lg:mb-12 px-5 md:px-0 pb-6 md:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
                     >
                         {isLoading ? (

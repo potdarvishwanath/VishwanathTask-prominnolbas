@@ -10,11 +10,8 @@ const Navbar = () => {
     useEffect(() => {
         const handleScroll = () => {
             const hero = document.getElementById("home");
-            // Calculate the hero section's height. If not found, fallback to window height
             const heroHeight = hero ? hero.offsetHeight : window.innerHeight;
 
-            // Trigger the background change after passing the hero section completely
-            // Subtracting a small buffer (80px for navbar height) so it changes smoothly
             if (window.scrollY > heroHeight - 80) {
                 setIsScrolled(true);
             } else {
@@ -34,7 +31,6 @@ const Navbar = () => {
         { name: "FAQ", href: "#faq" },
     ];
 
-    // Prevent background scrolling when mobile menu is open
     useEffect(() => {
         if (isMobileMenuOpen) {
             document.body.style.overflow = "hidden";

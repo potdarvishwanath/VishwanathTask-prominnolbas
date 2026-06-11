@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 const TestimonialSection = () => {
     const scrollRef = useRef(null);
 
-    // Loading State for Skeletons
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
@@ -16,7 +15,6 @@ const TestimonialSection = () => {
         return () => clearTimeout(timer);
     }, []);
 
-    // Animation Variants
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -67,7 +65,6 @@ const TestimonialSection = () => {
 
     const scroll = (direction) => {
         if (scrollRef.current) {
-            // Scroll by the width of one card approximately
             const scrollAmount = window.innerWidth < 768 ? window.innerWidth * 0.85 : 400;
             scrollRef.current.scrollBy({
                 left: direction === "left" ? -scrollAmount : scrollAmount,
@@ -94,7 +91,6 @@ const TestimonialSection = () => {
                 >
                     <motion.h2
                         variants={fadeUpVariants}
-                        // Applied our established Standard Section Title typography scale & leading
                         className="w-full text-4xl sm:text-5xl md:text-6xl lg:text-[3.25rem] xl:text-[4rem] font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#4b2885] via-[#8a5cff] to-violet-600 leading-[1.05] tracking-tight"
                     >
                         Our happy clients

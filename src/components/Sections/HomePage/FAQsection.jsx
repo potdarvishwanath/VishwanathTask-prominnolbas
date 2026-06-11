@@ -4,10 +4,8 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const FAQSection = () => {
-    // State to track the currently open FAQ item. Defaulting to the first one (index 0).
     const [openIndex, setOpenIndex] = useState(0);
 
-    // Animation Variants
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -25,7 +23,6 @@ const FAQSection = () => {
         },
     };
 
-    // Realistic Business FAQ Data (5 Questions)
     const faqs = [
         {
             question: "How long does a typical project take to complete?",
@@ -62,14 +59,12 @@ const FAQSection = () => {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
                     variants={containerVariants}
-                    // Mobile: Stacks using Flex. Desktop: 5-column Grid for perfect 40/60 split.
                     className="flex flex-col lg:grid lg:grid-cols-5 gap-8 sm:gap-10 lg:gap-x-12 xl:gap-x-20 lg:gap-y-8 lg:items-start"
                 >
 
                     {/* ─── TITLE: Mobile (Top), Desktop (Top Right - 60%) ───────────── */}
                     <motion.div
                         variants={fadeUpVariants}
-                        // col-span-3 (out of 5) = 60% width
                         className="order-1 lg:order-none lg:col-span-3 lg:col-start-3 lg:row-start-1"
                     >
                         {/* Applied theme gradient and exact typography scale */}
@@ -81,8 +76,6 @@ const FAQSection = () => {
                     {/* ─── IMAGE: Mobile (Middle), Desktop (Left column - 40%) ──────── */}
                     <motion.div
                         variants={fadeUpVariants}
-                        // col-span-2 = 40% width. 
-                        // row-start-2 & self-center pins the image precisely to the vertical center of the questions block.
                         className="order-2 lg:order-none lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:self-center w-full flex-shrink-0"
                     >
                         <div className="relative w-full aspect-square md:aspect-[4/3] lg:aspect-square bg-black/5 overflow-hidden shadow-sm border border-black/5 rounded-none">
@@ -98,7 +91,6 @@ const FAQSection = () => {
                     {/* ─── QUESTIONS: Mobile (Bottom), Desktop (Bottom Right - 60%) ─── */}
                     <motion.div
                         variants={containerVariants}
-                        // col-span-3 (out of 5) = 60% width
                         className="order-3 lg:order-none lg:col-span-3 lg:col-start-3 lg:row-start-2 flex flex-col gap-4"
                     >
                         {faqs.map((faq, index) => {

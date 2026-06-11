@@ -4,7 +4,6 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const TrustSection = () => {
-    // Animation Variants
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -46,8 +45,6 @@ const TrustSection = () => {
                 >
                     <motion.h2
                         variants={fadeUpVariants}
-                        // Added lg:whitespace-nowrap to force single line on laptops. 
-                        // Tweaked lg/xl font sizes so the single line fits comfortably.
                         className="w-full text-left sm:text-center text-4xl sm:text-5xl md:text-6xl lg:text-[3.25rem] xl:text-[4rem] font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-violet-300 via-[#8a5cff] to-violet-700 leading-[1.05] tracking-tight mb-5 sm:mb-8 lg:whitespace-nowrap"
                     >
                         Why our clients <br className="block sm:block lg:hidden" /> trust us
@@ -70,7 +67,6 @@ const TrustSection = () => {
                         whileInView="visible"
                         viewport={{ once: true, margin: "-100px" }}
                         variants={containerVariants}
-                        // Slightly wider column on lg to give images room
                         className="w-full lg:w-[48%] flex items-center justify-center"
                     >
                         {/* Constrained max-width for smaller laptops (lg), letting it expand on xl */}
@@ -80,7 +76,6 @@ const TrustSection = () => {
                                 <img
                                     src="https://res.cloudinary.com/dgt0o0jlc/image/upload/v1781195459/Screenshot_2026-06-11_220017_wsqdof.jpg"
                                     alt="Client Trust 1"
-                                    // Removed rounded classes for sharp corners
                                     className="w-full h-full object-cover shadow-lg border-2 border-[#8a5cff]"
                                 />
                             </motion.div>
@@ -89,7 +84,6 @@ const TrustSection = () => {
                                 <img
                                     src="https://res.cloudinary.com/dgt0o0jlc/image/upload/v1781194644/Screenshot_2026-06-11_214631_f4ckeg.jpg"
                                     alt="Client Trust 2"
-                                    // Removed rounded classes for sharp corners
                                     className="w-full h-full object-cover shadow-lg border-2 border-[#8a5cff]"
                                 />
                             </motion.div>
@@ -98,7 +92,6 @@ const TrustSection = () => {
                                 <img
                                     src="https://res.cloudinary.com/dgt0o0jlc/image/upload/v1781195661/Screenshot_2026-06-11_220357_zaz9zz.jpg"
                                     alt="Client Trust 3"
-                                    // Removed rounded classes for sharp corners
                                     className="w-full h-full object-cover shadow-lg border-2 border-[#8a5cff]"
                                 />
                             </motion.div>

@@ -3,7 +3,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-// Using reliable Wikimedia CDN links for the real official SVGs
 const partnersLogos = [
 
     {
@@ -30,7 +29,6 @@ const partnersLogos = [
 ];
 
 const OurPartnersSection = () => {
-    // Animation Variants for header
     const headerVariants = {
         hidden: { y: 20, opacity: 0 },
         visible: {
@@ -40,7 +38,6 @@ const OurPartnersSection = () => {
         },
     };
 
-    // Scroll animations for logo bar - creates the infinite loop
     const duplicatedLogos = [...partnersLogos, ...partnersLogos];
 
     return (
@@ -78,7 +75,6 @@ const OurPartnersSection = () => {
                     <div className="overflow-hidden w-full relative flex items-center">
                         <motion.div
                             animate={{ x: ["0%", "-50%"] }}
-                            // Reduced duration from 35 to 20 for faster scrolling
                             transition={{ repeat: Infinity, ease: "linear", duration: 20 }}
                             className="flex whitespace-nowrap gap-x-16 sm:gap-x-20 md:gap-x-28 items-center w-max px-8"
                         >
@@ -90,7 +86,6 @@ const OurPartnersSection = () => {
                                     <img
                                         src={partner.src}
                                         alt={`${partner.name} logo`}
-                                        // Increased height classes (h-9, h-12, h-14) to make logos larger
                                         className="h-9 sm:h-12 lg:h-14 w-auto object-contain grayscale opacity-40 transition-all duration-300 hover:grayscale-0 hover:opacity-100"
                                     />
                                 </div>

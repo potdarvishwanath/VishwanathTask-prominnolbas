@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import ColorBends from "../../common/ColorBlend/ColorBends";
 
 const HomeHero = () => {
-  // Framer Motion variants for staggered text reveal
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -27,7 +26,6 @@ const HomeHero = () => {
   };
 
   return (
-    // Outer container: Scales naturally to its content
     <section id="home" className="relative w-full bg-black overflow-hidden flex flex-col justify-center selection:bg-white/20 selection:text-white">
 
       {/* ─── BACKGROUND LAYERS ────────────────────────────────────────── */}

@@ -8,7 +8,6 @@ export default function Preloader() {
   const [phase, setPhase] = useState("counting"); // counting | revealing | done
 
   useEffect(() => {
-    // Sped up the count to 100 over ~1.2 seconds (was 2 seconds)
     const duration = 1200; // ms
     const steps = 100;
     const stepTime = duration / steps;
@@ -19,9 +18,7 @@ export default function Preloader() {
       setCount(current);
       if (current >= 100) {
         clearInterval(timer);
-        // Once at 100%, start the zipper reveal animation
         setTimeout(() => setPhase("revealing"), 300);
-        // Remove from DOM after animation completes entirely
         setTimeout(() => setPhase("done"), 4000); 
       }
     }, stepTime);
@@ -31,11 +28,9 @@ export default function Preloader() {
 
   if (phase === "done") return null;
 
-  // Zipper columns setup
   const COLUMNS_COUNT = 1; 
   const columns = Array.from({ length: COLUMNS_COUNT });
 
-  // Calculate the number of filled blocks in the progress bar (out of 10)
   const filledBlocksCount = Math.round(count / 10);
 
   return (
@@ -71,7 +66,6 @@ export default function Preloader() {
       {/* The Zipper Columns */}
       <div className="preloader__columns">
         {columns.map((_, i) => {
-          // No delay for a single split
           const delay = 0; 
           return (
             <div key={i} className="preloader__column">

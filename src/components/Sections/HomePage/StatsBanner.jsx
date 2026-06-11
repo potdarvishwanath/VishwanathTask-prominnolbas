@@ -4,7 +4,6 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const StrategySection = () => {
-    // Animation Variants
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -22,7 +21,6 @@ const StrategySection = () => {
         },
     };
 
-    // Stats Data
     const stats = [
         { label: "Clients", value: "12K" },
         { label: "Annual growth", value: "55%" },

@@ -22,7 +22,7 @@ const Footer = () => {
             {/* ─── MAIN FOOTER CONTENT ──────────────────────────────────────── */}
             <div className="w-full max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12 grid grid-cols-2 md:grid-cols-6 lg:grid-cols-12 gap-x-6 gap-y-10 lg:gap-y-12">
 
-                {/* Column 1: Logo & Text */}
+                {/* logo and text */}
                 <div className="col-span-2 md:col-span-3 lg:col-span-3 order-1 lg:order-1 flex flex-col items-center text-center md:items-start md:text-left">
                     <div className="flex items-center gap-3 mb-6">
                         <div className="w-14 h-14 bg-black rounded-full flex items-center justify-center text-white border border-white/10 shadow-lg">
@@ -35,7 +35,7 @@ const Footer = () => {
                     </p>
                 </div>
 
-                {/* Column 5: Social */}
+                {/* social icons */}
                 <div className="col-span-2 md:col-span-3 lg:col-span-3 order-2 lg:order-5 flex flex-col items-center md:items-end lg:items-start">
                     <h4 className="font-bold text-lg mb-6 tracking-wide text-white">Connect with us</h4>
                     <div className="flex gap-3 justify-center md:justify-end lg:justify-start flex-wrap">
@@ -58,7 +58,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                {/* Column 2: Links */}
+                {/* company links */}
                 <div className="col-span-1 md:col-span-2 lg:col-span-2 order-3 lg:order-2 flex flex-col items-center md:items-start text-center md:text-left">
                     <h4 className="font-bold text-lg mb-6 tracking-wide text-white">Company</h4>
                     <div className="flex flex-col gap-4">
@@ -69,7 +69,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                {/* Column 3: Links */}
+                {/* service links */}
                 <div className="col-span-1 md:col-span-2 lg:col-span-2 order-4 lg:order-3 flex flex-col items-center md:items-start text-center md:text-left">
                     <h4 className="font-bold text-lg mb-6 tracking-wide text-white">Services</h4>
                     <div className="flex flex-col gap-4">
@@ -80,7 +80,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                {/* Column 4: Links */}
+                {/* support links */}
                 <div className="col-span-2 md:col-span-2 lg:col-span-2 order-5 lg:order-4 flex flex-col items-center md:items-start text-center md:text-left">
                     <h4 className="font-bold text-lg mb-6 tracking-wide text-white">Support</h4>
                     <div className="flex flex-col gap-4">
