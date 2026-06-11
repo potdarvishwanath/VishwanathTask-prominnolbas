@@ -8,10 +8,14 @@ const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     useEffect(() => {
-        const handleScroll = () => {
-            const hero = document.getElementById("home");
-            const heroHeight = hero ? hero.offsetHeight : window.innerHeight;
+        const hero = document.getElementById("home");
+        let heroHeight = hero ? hero.offsetHeight : window.innerHeight;
 
+        const handleResize = () => {
+            heroHeight = hero ? hero.offsetHeight : window.innerHeight;
+        };
+
+        const handleScroll = () => {
             if (window.scrollY > heroHeight - 80) {
                 setIsScrolled(true);
             } else {
@@ -19,8 +23,12 @@ const Navbar = () => {
             }
         };
 
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
+        window.addEventListener("resize", handleResize);
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => {
+            window.removeEventListener("resize", handleResize);
+            window.removeEventListener("scroll", handleScroll);
+        };
     }, []);
 
     const navLinks = [
