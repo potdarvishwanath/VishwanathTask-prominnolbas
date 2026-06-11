@@ -138,7 +138,7 @@ const Navbar = () => {
                         transition={{ duration: 0.4, ease: [0.6, -0.05, 0.01, 0.99] }}
                         className="fixed inset-0 z-40 bg-[#0a0a0a] flex flex-col items-center justify-center lg:hidden"
                     >
-                        <nav className="grid grid-cols-2 place-items-center gap-y-10 gap-x-4 w-full px-5 max-w-md">
+                        <nav className="flex flex-col items-center justify-center gap-y-8 w-full px-5 max-w-md">
                             {navLinks.map((link, index) => (
                                 <motion.a
                                     key={index}
